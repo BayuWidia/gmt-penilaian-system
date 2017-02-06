@@ -1,0 +1,25 @@
+
+<groupbox zclass="none">
+	<grid zclass="none">
+		<columns>
+			<column hflex="min" align="right"/>
+			<column />
+		</columns>
+		<rows>
+			<row zclass="none">
+				<image src="/asset/img/logo-gmt.png"></image>
+				
+				<vbox id="result">
+			        <label id="lb1" zclass="word-shadow"></label>
+			        <label id="lb2" multiline="false" zclass="word-shadow"/>
+			        <label id="lb3" zclass="word-shadow"/>
+			        <zscript><![CDATA[
+			            lb1.value = "    Royal Palace A - 6, Jalan DR. Soepomo, RT.1/RW.15";
+			            lb2.value = "    Tebet Barat, Kota Jakarta Selatan 12870, Indonesia";
+			            lb3.value = "    Telepon: +62 21 8313232";
+			        ]]></zscript>
+			    </vbox>
+			</row>
+		</rows>
+	</grid>
+</groupbox>

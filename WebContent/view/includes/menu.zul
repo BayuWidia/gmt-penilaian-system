@@ -1,0 +1,10 @@
+
+<menubar id="menubar" width="100%">
+	<menuitem label="Dashboard" href="dashboard.zul" image="/asset/img/home.png"/>
+	<menuitem label="Tambah Kinerja Pegawai" href="keloladatapegawai.zul" image="/asset/img/plus.png"/>
+    <menuitem label="History Kinerja Pegawai" href="historykinerjapegawai.zul" image="/asset/img/personal.png"/>
+	<menuitem label="Import File" href="importfile.zul" image="/asset/img/csv.png"/>
+	<menuitem label="Hasil Kinerja Pegawai" href="hasilkinerjapegawai.zul" image="/asset/img/grafik.png"/>
+	<menuitem label="About" href="about.zul" image="/asset/img/about.png"/>
+	<menuitem label="Logout" href="login.zul" image="/asset/img/logout.png" id="menuItemLogout"/>
+</menubar>

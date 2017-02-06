@@ -1,0 +1,35 @@
+<?page title="PT. Ganda Mady Indotama" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<hbox vflex="1" hflex="1" align="center"  pack="center" spacing="20px">
+        <vlayout>
+            <window id="winLogin" apply="controller.LoginController" title="Login Pegawai GMT" 
+            	border="normal" hflex="min" mode="highlighted">
+                <vbox hflex="min" align="center">
+                    <grid hflex="min">
+                        <columns>
+                            <column hflex="min" align="right" />
+                            <column />
+                        </columns>
+                        <rows>
+                            <row>
+                                <label value="NIP :"></label>
+                                <textbox id="txtNIP" width="350px" placeholder="Nomor Induk Pegawai"/>
+                            </row>
+                            <row>
+                                <label value="Password :"></label>
+                                <textbox id="txtPassword" type="password" width="350px" placeholder="Password"/>
+                            </row>
+                            <row>
+                                <label></label>
+                                <div align="center">
+                               		<button id="btnLogin" label="Login" />
+                                	<button id="btnClear" label="Clear" />
+                                </div>
+                            </row>
+                        </rows>
+                    </grid>
+                </vbox>
+            </window>
+        </vlayout>
+    </hbox>
+</zk>

@@ -1,0 +1,301 @@
+<?page title="PT. Ganda Mady Indotama" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style src="/asset/css/custome.css" />
+	<window border="normal" mode="highlighted" id="winKelolaDataPegawai"
+		style="width:99%; height:99%;"
+		apply="controller.KelolaDataPegawaiController">
+		<include src="includes/header.zul"></include>
+		<separator />
+		<include src="includes/menu.zul"></include>
+		<separator />
+		<groupbox height="72%">
+			<caption label="Tambah Kinerja Pegawai" sclass="caption" />
+			<div width="100%" height="100%" style="overflow:auto;">
+				<grid zclass="none">
+					<columns>
+						<column width="5%" hflex="min" align="right" />
+						<column width="40%" />
+						<column width="5%" hflex="min" align="right" />
+						<column width="40%" />
+					</columns>
+					<rows>
+						<row>
+							<div>
+								<label value="NIP" />
+								<label value="*" sclass="mandatory" />
+							</div>
+							<bandbox readonly="true" id="bdxNip"
+								width="100%">
+								<bandpopup>
+									<vbox>
+										<hbox>
+											<textbox id="txtSearchNip"
+												width="400px" placeholder="Nama Pegawai"
+												sclass="font-uppercase" />
+											<button label="Search"
+												id="btnCariNip" />
+										</hbox>
+										<listbox id="lbxNip"
+											mold="paging" pageSize="30" width="470px">
+											<listhead>
+												<listheader label="NIP"
+													align="center" hflex="min" sort="auto(nip)" />
+												<listheader
+													label="NAMA PEGAWAI" align="center" hflex="true"
+													sort="auto(nama)" />
+											</listhead>
+											<template name="model">
+												<listitem
+													value="${each}">
+													<listcell
+														label="${each.nip}" style="text-align:left" />
+													<listcell
+														label="${each.nama}" style="text-align:left" />
+												</listitem>
+											</template>
+										</listbox>
+									</vbox>
+								</bandpopup>
+							</bandbox>
+							<label value="Nama" />
+							<textbox readonly="true" id="txtNamaPegawai"
+								width="100%" placeholder="nama pegawai belum diset" />
+						</row>
+						<row>
+							<label value="Tahun" />
+							<textbox id="txtTahun" width="100%"
+								readonly="true" />
+							<label value="Tanggal Input" />
+							<datebox id="dtbTanggalInput" width="100%"
+								disabled="true" format="long" />
+						</row>
+						<row>
+							<div>
+								<label value="Pendidikan" />
+								<label value="*" sclass="mandatory" />
+							</div>
+							<combobox id="cmbPendidikan" readonly="true"
+								width="100%" />
+							<label value="Status Kinerja" />
+							<textbox readonly="true"
+								id="txtStatusKinerja" width="100%"
+								placeholder="status kinerja belum diset" />
+						</row>
+						<row>
+							<div>
+								<label value="Kehadiran" />
+								<label value="*" sclass="mandatory" />
+							</div>
+							<decimalbox id="dcxKehadiran" value="0"
+								width="100%" maxlength="1" />
+							<div>
+								<label value="Prilaku" />
+								<label value="*" sclass="mandatory" />
+							</div>
+							<decimalbox id="dcxPrilaku" value="0"
+								width="100%" maxlength="1" />
+						</row>
+						<row>
+							<div>
+								<label value="Tanggung Jawab" />
+								<label value="*" sclass="mandatory" />
+							</div>
+							<decimalbox id="dcxTanggungJawab" value="0"
+								width="100%" maxlength="1" />
+							<div>
+								<label value="Inisiatif" />
+								<label value="*" sclass="mandatory" />
+							</div>
+							<decimalbox id="dcxInisiatif" value="0"
+								width="100%" maxlength="1" />
+						</row>
+						<row>
+							<div>
+								<label value="Kerja Sama" />
+								<label value="*" sclass="mandatory" />
+							</div>
+							<decimalbox id="dcxKerjaSama" value="0"
+								width="100%" maxlength="1" />
+							<div>
+								<label value="Disiplin" />
+								<label value="*" sclass="mandatory" />
+							</div>
+							<decimalbox id="dcxDisiplin" value="0"
+								width="100%" maxlength="1" />
+						</row>
+						<row>
+							<label />
+							<label
+								value="Note: yang bertandakan * bersifat tidak boleh dikosongkan"
+								sclass="mandatory" style="font-style: italic" />
+							<label />
+							<div align="right" sclass="padding">
+								<button id="btnView"
+									label="Process Naive Bayes Algorithm" autodisable="self" />
+								<button id="btnSave" label="Save"
+									autodisable="self" />
+								<button id="btnClear" label="Clear"
+									autodisable="self" />
+							</div>
+						</row>
+					</rows>
+				</grid>
+				<separator />
+				<panel height="100%" width="100%" framable="true"
+					style="margin-bottom:10px"
+					title="Perhitungan Algoritma Naive Bayes Classifier"
+					border="normal" collapsible="true">
+					<panelchildren>
+						<tabbox id="tbxKelolaSiswa" sclass="tab"
+							height="95%">
+							<tabs id="tabs">
+								<tab id="A"
+									label="List Data Yang Sudah Ada" />
+								<tab id="B"
+									label="Tahap 1 Mengitung Jumlah Class / Label" />
+								<tab id="C"
+									label="Tahap 2 Menghitung Jumlah Kasus Yang Sama Dengan Class Yang Sama" />
+								<tab id="D"
+									label="Tahap 3 Kalikan Semua Hasil Variable" />
+								<tab id="E"
+									label="Tahap 4 Bandingkan Hasil Class" />
+							</tabs>
+							<tabpanels>
+								<tabpanel>
+									<div width="100%" height="100%"
+										style="overflow:auto;">
+										<label value="PENDIDKIKAN :" />
+										<label id="lblTahap0Pendidikan" />
+										<separator />
+										<separator />
+										<label value="KEHADIRAN :" />
+										<label id="lblTahap0Kehadiran" />
+										<separator />
+										<separator />
+										<label value="PRILAKU :" />
+										<label id="lblTahap0Prilaku" />
+										<separator />
+										<separator />
+										<label value="TANGGUNG JAWAB :" />
+										<label
+											id="lblTahap0TanggungJawab" />
+										<separator />
+										<separator />
+										<label value="INISIATIF :" />
+										<label id="lblTahap0Inisiatif" />
+										<separator />
+										<separator />
+										<label value="KERJA SAMA :" />
+										<label id="lblTahap0KerjaSama" />
+										<separator />
+										<separator />
+										<label value="DISIPLIN :" />
+										<label id="lblTahap0Disiplin" />
+										<separator />
+										<separator />
+									</div>
+								</tabpanel>
+								<tabpanel>
+									<div width="100%" height="100%"
+										style="overflow:auto;">
+										<label
+											value="Kinerja Tidak Efektif :" />
+										<label id="lblTahap1KinerjaTE" />
+										<separator />
+										<separator />
+										<label
+											value="Kinerja Sesuai Standar :" />
+										<label id="lblTahap1KinerjaSS" />
+										<separator />
+										<separator />
+										<label value="Kinerja Tinggi :" />
+										<label id="lblTahap1KinerjaT" />
+										<separator />
+										<separator />
+										<label value="Kinerja Rendah :" />
+										<label id="lblTahap1KinerjaR" />
+										<separator />
+										<separator />
+										<label
+											value="Kinerja Sangat Tinggi :" />
+										<label id="lblTahap1KinerjaST" />
+										<separator />
+										<separator />
+									</div>
+								</tabpanel>
+								<tabpanel>
+									<div width="100%" height="100%"
+										style="overflow:auto;">
+										<label value="PENDIDKIKAN :" />
+										<label id="lblTahap2Pendidikan" />
+										<separator />
+										<separator />
+										<label value="KEHADIRAN :" />
+										<label id="lblTahap2Kehadiran" />
+										<separator />
+										<separator />
+										<label value="PRILAKU :" />
+										<label id="lblTahap2Prilaku" />
+										<separator />
+										<separator />
+										<label value="TANGGUNG JAWAB :" />
+										<label
+											id="lblTahap2TanggungJawab" />
+										<separator />
+										<separator />
+										<label value="INISIATIF :" />
+										<label id="lblTahap2Inisiatif" />
+										<separator />
+										<separator />
+										<label value="KERJA SAMA :" />
+										<label id="lblTahap2KerjaSama" />
+										<separator />
+										<separator />
+										<label value="DISIPLIN :" />
+										<label id="lblTahap2Disiplin" />
+										<separator />
+										<separator />
+									</div>
+								</tabpanel>
+								<tabpanel>
+									<div width="100%" height="100%"
+										style="overflow:auto;">
+										<label
+											value="Kinerja Tidak Efektif :" />
+										<label id="lblTahap3KinerjaTE" />
+										<separator />
+										<separator />
+										<label
+											value="Kinerja Sesuai Standar :" />
+										<label id="lblTahap3KinerjaSS" />
+										<separator />
+										<separator />
+										<label value="Kinerja Tinggi :" />
+										<label id="lblTahap3KinerjaT" />
+										<separator />
+										<separator />
+										<label value="Kinerja Rendah :" />
+										<label id="lblTahap3KinerjaR" />
+										<separator />
+										<separator />
+										<label
+											value="Kinerja Sangat Tinggi :" />
+										<label id="lblTahap3KinerjaST" />
+										<separator />
+										<separator />
+									</div>
+								</tabpanel>
+								<tabpanel>
+									<label id="lblHasil"/>
+								</tabpanel>
+							</tabpanels>
+						</tabbox>
+					</panelchildren>
+				</panel>
+				<separator />
+			</div>
+		</groupbox>
+		<separator />
+		<include src="includes/footer.zul"></include>
+	</window>
+</zk>

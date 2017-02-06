@@ -1,0 +1,63 @@
+<?page title="PT. Ganda Mady Indotama" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="/asset/css/custome.css"/>
+<window border="normal" mode="highlighted" id="winHasilKinerjaPegawai"
+	style="width:99%; height:99%;" apply="controller.HasilKinerjaPegawaiController">
+	<include src="includes/header.zul"></include>
+	<separator/>
+	<include src="includes/menu.zul"></include>
+	<separator/>
+	<groupbox height="72%">
+	<caption label="Hasil Kinerja Pegawai" sclass="caption"/>
+		<div width="100%" height="100%" style="overflow:auto;">
+		    <vbox>
+		        <div width="100%" height="15%">
+		        <grid zclass="none">
+					<columns>
+						<column width="15%" hflex="min" align="right" />
+						<column/>
+					</columns>
+					<rows>
+						<row>
+							<label value="Kriteria Kinerja" />
+						    <combobox id="cmbKriteriaKinerja" readonly="true" width="30%"/>
+						</row>
+						<row>
+							<label value="Tahun" />
+						    <combobox id="cmbTahun" readonly="true" width="30%"/>
+						</row>
+						<row>
+							<label />
+							<div align="left" sclass="padding">
+								<button  id="btnSearch" label="Search" autodisable="self"/>
+								<button  id="btnClear" label="Clear" autodisable="self"/>
+							</div>
+						</row>
+					</rows>
+				</grid>
+				</div>
+		        <div width="100%" height="85px">
+		        	<listbox emptyMessage="Tidak ada data" id="lbxHasilKinerja" mold="paging" pageSize="50" width="100%">
+						<listhead>
+							<listheader label="NIP" sort="auto(nip)" align="center" hflex="min"/>
+							<listheader label="Nama Pegawai" sort="auto(nama)" align="center" hflex="true"/>
+							<listheader label="Pendidikan" sort="auto(pendidikan)" align="center" hflex="min"/>
+							<listheader label="Kehadiran" sort="auto(kehadiran)" align="center" hflex="min"/>
+							<listheader label="Tanggung Jawab" sort="auto(tanggung_jawab)" align="center" hflex="min"/>
+							<listheader label="Kerja Sama" sort="auto(kerja_sama)" align="center" hflex="min"/>
+							<listheader label="Prilaku" sort="auto(prilaku)" align="center" hflex="min"/>
+							<listheader label="Inisiatif" sort="auto(inisiatif)" align="center" hflex="min"/>
+							<listheader label="Disiplin" sort="auto(disiplin)" align="center" hflex="min"/>
+							<listheader label="Tahun" sort="auto(tahun)" align="center" hflex="min"/>
+							<listheader label="Status Kinerja" sort="auto(status_kinerja)" align="center" hflex="true" />
+						</listhead>
+					</listbox>
+					<separator/>
+		        </div>
+		    </vbox>
+		</div>
+	</groupbox>
+	<separator/>
+	<include src="includes/footer.zul"></include>
+</window>
+</zk>

@@ -1,0 +1,33 @@
+<?page title="PT. Ganda Mady Indotama" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="/asset/css/custome.css"/>
+<window border="normal" mode="highlighted" 
+	style="width:99%; height:99%;" apply="controller.AboutController">
+	<include src="includes/header.zul"></include>
+	<separator/>
+	<include src="includes/menu.zul"></include>
+	<separator/>
+	<groupbox height="72%" zclass="none">
+		<tabbox width="100%" height="100%">
+	        <tabs>
+	            <tab label="Tambah Kinerja Pegawai" />
+	            <tab label="Import File" />
+	            <tab label="Hasil Kinerja Pegawai" />
+	        </tabs>
+	        <tabpanels>
+	            <tabpanel>
+	            	<image src="/asset/img/Untitled.png" style="padding-top:2%"></image>
+	           	</tabpanel>
+	            <tabpanel>
+	            	<image src="/asset/img/Untitled2.png" style="padding-top:2%"></image>
+	            </tabpanel>
+	            <tabpanel>
+	            	<image src="/asset/img/Untitled3.png" style="padding-top:2%"></image>
+	            </tabpanel>
+	        </tabpanels>
+	    </tabbox>
+	</groupbox>
+	<separator/>
+	<include src="includes/footer.zul"></include>
+</window>
+</zk>

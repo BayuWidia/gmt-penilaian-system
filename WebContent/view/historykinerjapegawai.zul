@@ -1,0 +1,85 @@
+<?page title="PT. Ganda Mady Indotama" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="/asset/css/custome.css"/>
+<window border="normal" mode="highlighted" id="winHistoryKinerjaPegawai"
+	style="width:99%; height:99%;" apply="controller.HistoryKinerjaPegawaiController">
+	<include src="includes/header.zul"></include>
+	<separator/>
+	<include src="includes/menu.zul"></include>
+	<separator/>
+	<groupbox height="72%">
+	<caption label="History Kinerja Pegawai" sclass="caption"/>
+		<div width="100%" height="100%" style="overflow:auto;">
+		    <vbox>
+		        <div width="100%" height="15%">
+		        <grid zclass="none">
+					<columns>
+						<column width="15%" hflex="min" align="right" />
+						<column/>
+					</columns>
+					<rows>
+						<row>
+							<div>
+								<label value="NIP" />
+								<label value="*" sclass="mandatory"/>
+							</div>
+							<bandbox readonly="true" id="bdxNip" width="35%" >
+								<bandpopup>
+									<vbox>
+										<hbox>
+											<textbox id="txtSearchNip"
+											width="400px" placeholder="Nama Pegawai" sclass="font-uppercase"/>
+											<button label="Search" id="btnCariNip" />
+										</hbox>
+										<listbox id="lbxNip" mold="paging" pageSize="30" width="470px">
+											<listhead>
+												 <listheader label="NIP" align="center" hflex="min" sort="auto(nip)" />
+												 <listheader label="NAMA PEGAWAI" align="center" hflex="true" sort="auto(nama)" />
+											</listhead>
+											<template name="model">
+												<listitem value="${each}">
+													<listcell label="${each.nip}" style="text-align:left" />
+													<listcell label="${each.nama}" style="text-align:left" />
+												</listitem>
+											</template>
+										</listbox>
+									</vbox>
+								</bandpopup>
+							</bandbox>
+						</row>
+						<row>
+							<label value="Nama" />
+							<textbox readonly="true" id="txtNamaPegawai" width="35%" placeholder="nama pegawai belum diset"/>
+						</row>
+						<row>
+							<label />
+							<div align="left" sclass="padding">
+								<button  id="btnSearch" label="Search" autodisable="self"/>
+								<button  id="btnClear" label="Clear" autodisable="self"/>
+							</div>
+						</row>
+					</rows>
+				</grid>
+				</div>
+		        <div width="100%" height="85px">
+		        	<listbox emptyMessage="Tidak ada data" id="lbxHasilKinerja" mold="paging" pageSize="50" width="100%">
+						<listhead>
+							<listheader label="Pendidikan" sort="auto(pendidikan)" align="center" hflex="min"/>
+							<listheader label="Kehadiran" sort="auto(kehadiran)" align="center" hflex="min"/>
+							<listheader label="Tanggung Jawab" sort="auto(tanggung_jawab)" align="center" hflex="min"/>
+							<listheader label="Kerja Sama" sort="auto(kerja_sama)" align="center" hflex="min"/>
+							<listheader label="Prilaku" sort="auto(prilaku)" align="center" hflex="min"/>
+							<listheader label="Inisiatif" sort="auto(inisiatif)" align="center" hflex="min"/>
+							<listheader label="Disiplin" sort="auto(disiplin)" align="center" hflex="min"/>
+							<listheader label="Tahun" sort="auto(tahun)" align="center" hflex="min"/>
+							<listheader label="Status Kinerja" sort="auto(status_kinerja)" align="center" hflex="true" />
+						</listhead>
+					</listbox>
+		        </div>
+		    </vbox>
+		</div>
+	</groupbox>
+	<separator/>
+	<include src="includes/footer.zul"></include>
+</window>
+</zk>
